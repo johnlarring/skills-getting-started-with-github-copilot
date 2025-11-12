@@ -156,19 +156,22 @@ footer {
 }
 
 .participants-list {
-  list-style: disc;
+  list-style: none; /* hide bullets */
   margin: 0;
-  padding-left: 20px;
+  padding: 8px 12px;
   max-height: 110px;
   overflow-y: auto;
   background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
   border: 1px solid #eef2ff;
   border-radius: 6px;
-  padding: 8px 12px;
   box-shadow: 0 1px 0 rgba(26,35,126,0.03);
 }
 
 .participant-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
   padding: 6px 8px;
   margin-bottom: 6px;
   border-radius: 4px;
@@ -176,6 +179,24 @@ footer {
   color: #444;
   font-size: 13px;
   border: 1px solid #f0f4ff;
+}
+
+.participant-item:last-child {
+  margin-bottom: 0;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: #c62828;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.delete-btn:hover {
+  background-color: rgba(198,40,40,0.08);
 }
 
 /* make the last item spacing tidy */
