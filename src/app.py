@@ -88,7 +88,14 @@ def root():
 
 @app.get("/activities")
 def get_activities():
-    return activities
+    # Return activities with participants sorted alphabetically for consistent display
+    sorted_activities = {}
+    for name, details in activities.items():
+        sorted_details = details.copy()
+        # produce a sorted copy of the participants list so UI is stable
+        sorted_details["participants"] = sorted(details.get("participants", []))
+        sorted_activities[name] = sorted_details
+    return sorted_activities
 
 
 @app.post("/activities/{activity_name}/signup")
